@@ -1,11 +1,11 @@
-# GPPuerto
-GPPpuerto es un proyecto donde se busca facilitar al usuario la busquedad de conocimientos e información sobre la categoría automovilística del F1. También el usuario podrá editar informacíon siempre que este sea registrado, teniendo interacción con el usuario.
+<div align="justify">
 
-<a href="https://github.com/AlejandroPerMar/proyectoets/wiki">Wiki del Proyecto</a>
+# GPPuerto
+La aplicación GPPuerto permite al usuario consultar información referente a la categoría del motorsport Formula 1.
 
 Los colaboradores de este proyecto son:
-Alejandro Pérez Martín
-
-Samuel González Machado
+Alejandro Pérez Martín y Samuel González Machado.
 
 ![](https://github.com/AlejandroPerMar/proyectoets/blob/develop/Imagenes/logo.png)
+
+</div>
