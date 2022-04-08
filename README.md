@@ -9,6 +9,10 @@ Alejandro Pérez Martín y Samuel González Machado.
 
   ![Wiki del proyecto](  https://github.com/AlejandroPerMar/proyectoets/wiki)
 
-![](https://github.com/AlejandroPerMar/proyectoets/blob/develop/Imagenes/logo.png)
+<div align="center">
+
+<img src = "https://github.com/AlejandroPerMar/proyectoets/blob/develop/Imagenes/logo.png" width = "400"/>
+
+</div>
 
 </div>
