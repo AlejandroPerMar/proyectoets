@@ -4,20 +4,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class EscuderiaTest {
+public class EquipoTest {
     
-    Escuderia escuderia;
+    Equipo equipo;
 
     @Before
     public void contructor() {
-        if (escuderia == null) {
-            escuderia = new Escuderia();
+        if (equipo == null) {
+            equipo = new Equipo();
         }
     }
 
     @Test
     public void contructorTest() {
-        Assert.assertNotNull("El objeto es nulo.", escuderia);
+        Assert.assertNotNull("El objeto es nulo.", equipo);
     }
 
 

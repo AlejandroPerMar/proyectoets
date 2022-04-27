@@ -16,7 +16,7 @@ public class Carrera {
     //Atributos de la clase
     Circuito circuito;
     Time tmpPole;
-    Time tmpVueltaRpdCarrera;
+    Time tmpVueltaRapida;
     
     /**
      * Constructor por defecto.
@@ -27,12 +27,12 @@ public class Carrera {
      * Constructor con 3 parametros.
      * @param circuito de la clase.
      * @param tmpPole de la clase.
-     * @param tmpVueltaRpdCarrera de la clase.
+     * @param tmpVueltaRapida de la clase.
      */
-    public Carrera(Circuito circuito, Time tmpPole, Time tmpVueltaRpdCarrera) {
+    public Carrera(Circuito circuito, Time tmpPole, Time tmpVueltaRapida) {
         this.circuito = circuito;
         this.tmpPole = tmpPole;
-        this.tmpVueltaRpdCarrera = tmpVueltaRpdCarrera;
+        this.tmpVueltaRapida = tmpVueltaRapida;
     }
     
     //Getters y Setters.
@@ -53,12 +53,12 @@ public class Carrera {
         this.tmpPole = tmpPole;
     }
 
-    public Time getTmpVueltaRpdCarrera() {
-        return tmpVueltaRpdCarrera;
+    public Time getTmpVueltaRapida() {
+        return tmpVueltaRapida;
     }
 
-    public void setTmpVueltaRpdCarrera(Time tmpVueltaRpdCarrera) {
-        this.tmpVueltaRpdCarrera = tmpVueltaRpdCarrera;
+    public void setTmpVueltaRapida(Time tmpVueltaRapida) {
+        this.tmpVueltaRapida = tmpVueltaRapida;
     }
     
     

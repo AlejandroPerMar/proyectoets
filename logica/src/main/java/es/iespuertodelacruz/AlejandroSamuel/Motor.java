@@ -13,10 +13,10 @@ public class Motor {
 
     // Atributos de la clase Motor
     String nombre;
-    Integer hp;
-    Integer nm;
-    Integer cc;
-    String disposicionMotor;
+    Integer caballosPotencia;
+    Integer parMotor;
+    Integer cilindrada;
+    String disposicion;
 
     /**
      * Constructor por defecto.
@@ -26,17 +26,17 @@ public class Motor {
     /**
      * Constructor con 5 parámetros.
      * @param nombre de la clase.
-     * @param hp de la clase.
-     * @param nm de la clase.
-     * @param cc de la clase.
-     * @param disposicionMotor de la clase.
+     * @param caballosPotencia de la clase.
+     * @param parMotor de la clase.
+     * @param cilindrada de la clase.
+     * @param disposicion de la clase.
      */
-    public Motor(String nombre, Integer hp, Integer nm, Integer cc, String disposicionMotor) {
+    public Motor(String nombre, Integer caballosPotencia, Integer parMotor, Integer cilindrada, String disposicion) {
         this.nombre = nombre;
-        this.hp = hp;
-        this.nm = nm;
-        this.cc = cc;
-        this.disposicionMotor = disposicionMotor;
+        this.caballosPotencia = caballosPotencia;
+        this.parMotor = parMotor;
+        this.cilindrada = cilindrada;
+        this.disposicion = disposicion;
     }
     
     //Getters y Setters
@@ -49,36 +49,36 @@ public class Motor {
         this.nombre = nombre;
     }
 
-    public Integer getHp() {
-        return hp;
+    public Integer getCaballosPotencia() {
+        return caballosPotencia;
     }
 
-    public void setHp(Integer hp) {
-        this.hp = hp;
+    public void setCaballosPotencia(Integer caballosPotencia) {
+        this.caballosPotencia = caballosPotencia;
     }
 
-    public Integer getNm() {
-        return nm;
+    public Integer getParMotor() {
+        return parMotor;
     }
 
-    public void setNm(Integer nm) {
-        this.nm = nm;
+    public void setParMotor(Integer parMotor) {
+        this.parMotor = parMotor;
     }
 
-    public Integer getCc() {
-        return cc;
+    public Integer getCilindrada() {
+        return cilindrada;
     }
 
-    public void setCc(Integer cc) {
-        this.cc = cc;
+    public void setCilindrada(Integer cilindrada) {
+        this.cilindrada = cilindrada;
     }
 
-    public String getDisposicionMotor() {
-        return disposicionMotor;
+    public String getDisposicion() {
+        return disposicion;
     }
 
-    public void setDisposicionMotor(String disposicionMotor) {
-        this.disposicionMotor = disposicionMotor;
+    public void setDisposicion(String disposicion) {
+        this.disposicion = disposicion;
     }
     
     

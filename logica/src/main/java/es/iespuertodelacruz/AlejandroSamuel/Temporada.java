@@ -16,9 +16,8 @@ public class Temporada {
     
     //Atributos de la clase
     String nombre;
-    String paisOrigen;
     ArrayList<Carrera> carreras;
-    HashMap<String, Escuderia> escuderias;
+    HashMap<String, Equipo> equipos;
     
     /**
      * Constructor por defecto.
@@ -26,16 +25,14 @@ public class Temporada {
     public Temporada(){}
 
     /**
-     * Constructor con dos parametros.
+     * Constructor con un parametro.
      * @param nombre de la clase.
-     * @param paisOrigen de la clase.
      * 
      */
-    public Temporada(String nombre, String paisOrigen) {
+    public Temporada(String nombre) {
         this.nombre = nombre;
-        this.paisOrigen = paisOrigen;
         this.carreras = new ArrayList<>();
-        this.escuderias = new HashMap<>();
+        this.equipos = new HashMap<>();
     }
     
     //Getters y Setters
@@ -48,14 +45,6 @@ public class Temporada {
         this.nombre = nombre;
     }
 
-    public String getPaisOrigen() {
-        return paisOrigen;
-    }
-
-    public void setPaisOrigen(String paisOrigen) {
-        this.paisOrigen = paisOrigen;
-    }
-
     public ArrayList<Carrera> getCarreras() {
         return carreras;
     }
@@ -64,12 +53,12 @@ public class Temporada {
         this.carreras = carreras;
     }
 
-    public HashMap<String, Escuderia> getEscuderias() {
-        return escuderias;
+    public HashMap<String, Equipo> getEquipos() {
+        return equipos;
     }
 
-    public void setEscuderias(HashMap<String, Escuderia> escuderias) {
-        this.escuderias = escuderias;
+    public void setEquipos(HashMap<String, Equipo> equipos) {
+        this.equipos = equipos;
     }
     
     

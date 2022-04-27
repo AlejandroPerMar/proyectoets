@@ -11,7 +11,7 @@ import java.util.HashMap;
  *
  * @author Alejandro Pérez Martín y Samuel Gonzalez Machad
  */
-public class Escuderia {
+public class Equipo {
     
     //Atributos de la clase Escuderia
     String nombre;
@@ -22,14 +22,14 @@ public class Escuderia {
     /**
      * Constructor por defecto.
      */
-    public Escuderia() {}
+    public Equipo() {}
 
     /**
      * Constructor con  2 parámetros.
      * @param nombre de la clase.
      * @param paisOrigen de la clase.
      */
-    public Escuderia(String nombre, String paisOrigen) {
+    public Equipo(String nombre, String paisOrigen) {
         this.nombre = nombre;
         this.paisOrigen = paisOrigen;
         this.pilotos = new HashMap<>();

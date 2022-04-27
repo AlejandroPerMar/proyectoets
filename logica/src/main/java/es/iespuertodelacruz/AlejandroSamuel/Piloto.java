@@ -16,7 +16,7 @@ public class Piloto {
     String apellido;
     Integer edad;
     String paisOrigen;
-    Temporada temporadasrealizadas;
+    Temporada temporadasRealizadas;
 
     
     /**
@@ -31,14 +31,14 @@ public class Piloto {
      * @param apellido de la clase.
      * @param edad de la clase.
      * @param paisOrigen de la clase.
-     * @param temporadasrealizadas de la clase.
+     * @param temporadasRealizadas de la clase.
      */
-    public Piloto(String nombre, String apellido, Integer edad, String paisOrigen, Temporada temporadasrealizadas) {
+    public Piloto(String nombre, String apellido, Integer edad, String paisOrigen, Temporada temporadasRealizadas) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.paisOrigen = paisOrigen;
-        this.temporadasrealizadas = temporadasrealizadas;
+        this.temporadasRealizadas = temporadasRealizadas;
     }
     
     
@@ -77,11 +77,11 @@ public class Piloto {
     }
 
     public Temporada getTemporadasrealizadas() {
-        return temporadasrealizadas;
+        return temporadasRealizadas;
     }
 
-    public void setTemporadasrealizadas(Temporada temporadasrealizadas) {
-        this.temporadasrealizadas = temporadasrealizadas;
+    public void setTemporadasrealizadas(Temporada temporadasRealizadas) {
+        this.temporadasRealizadas = temporadasRealizadas;
     }
     
     
