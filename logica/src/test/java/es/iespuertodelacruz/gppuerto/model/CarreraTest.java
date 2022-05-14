@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.iespuertodelacruz.gppuerto.model.Carrera;
-
 public class CarreraTest {
 
     Carrera carrera;

@@ -1,52 +1,52 @@
 package es.iespuertodelacruz.gppuerto.model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class GestorFichero {
+
+    File fichero;
     
-    public void leerFichero(){
-        File f = new File("/tmp/entrada.txt");
-        FileReader fr = null;
-        try {
-            fr = new FileReader(f);
-            BufferedReader br = new BufferedReader(fr);
-            String linea = "";
-            while (linea != null) {
-                linea = br.readLine();
-                if (linea != null) {
-                    System.out.println(linea);
-                }
-            }
-            br.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (fr != null)
-try {
-                fr.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
+    public GestorFichero(String ruta) {
+        fichero = new File(ruta);
     }
 
-    public void escribirFichero(){
-
-        File f = new File("salida.txt");
-        try { 
-            FileWriter fw = new FileWriter(f,true);
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
-            String texto = " ";
-            while (texto.length() > 0) { 
-                texto = br.readLine(); 
-                fw.write(texto + "\r\n");
+    /**
+     * Metodo para leer el contenido de un fichero y devolverlo en un String.
+     * @return String con el contenido del fichero
+     */
+    public String leerFichero() {
+        String contenidoFich = "";
+        String linea = "";
+        try (BufferedReader br = new BufferedReader(new FileReader(fichero));){
+            while(linea != null) {
+                linea = br.readLine();
+                if(linea != null) {
+                    contenidoFich += linea + "\n";
+                }
             }
-            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return contenidoFich;
+    }
+    
+    /**
+     * Metodo para escribir contenido en un fichero.
+     * @param contenido que se escribe en el fichero
+     * @param ruta
+     */
+    public void escribirFichero(String contenido) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));){
+            String[] lineas = contenido.split("\n");
+            for (String linea : lineas) {
+                bw.write(linea);
+                bw.newLine();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

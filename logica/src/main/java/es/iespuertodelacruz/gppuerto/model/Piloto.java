@@ -7,18 +7,17 @@ package es.iespuertodelacruz.gppuerto.model;
 
 /**
  *
- * @author Alejandro Pérez Martín y Samuel Gonzalez Machad
+ * @author Alejandro Pérez Martín y Samuel Gonzalez Machado
  */
 public class Piloto {
     
     //Atributos de la clase
-    String nombre;
-    String apellido;
-    Integer edad;
-    String paisOrigen;
-    Temporada temporadasRealizadas;
+    private String nombre;
+    private String apellido;
+    private Integer edad;
+    private String paisOrigen;
+    private Temporada temporadasRealizadas;
 
-    
     /**
      * Constructor por defecto.
      */
@@ -83,9 +82,4 @@ public class Piloto {
     public void setTemporadasrealizadas(Temporada temporadasRealizadas) {
         this.temporadasRealizadas = temporadasRealizadas;
     }
-    
-    
-    
-    
-    
 }

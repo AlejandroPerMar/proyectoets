@@ -15,9 +15,9 @@ import java.util.HashMap;
 public class Temporada {
     
     //Atributos de la clase
-    String nombre;
-    ArrayList<Carrera> carreras;
-    HashMap<String, Equipo> equipos;
+    private int anio;
+    private ArrayList<Carrera> carreras;
+    private HashMap<String, Equipo> equipos;
     
     /**
      * Constructor por defecto.
@@ -29,20 +29,20 @@ public class Temporada {
      * @param nombre de la clase.
      * 
      */
-    public Temporada(String nombre) {
-        this.nombre = nombre;
+    public Temporada(int anio) {
+        this.anio = anio;
         this.carreras = new ArrayList<>();
         this.equipos = new HashMap<>();
     }
     
     //Getters y Setters
 
-    public String getNombre() {
-        return nombre;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     public ArrayList<Carrera> getCarreras() {

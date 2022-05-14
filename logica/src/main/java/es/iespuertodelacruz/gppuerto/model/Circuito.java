@@ -12,9 +12,9 @@ package es.iespuertodelacruz.gppuerto.model;
 public class Circuito {
     
     //Atributos de la clase
-    String nombre;
-    String pais;
-    Double distanciaEnKm;
+    private String nombre;
+    private String pais;
+    private Double distanciaEnKm;
     
     /**
      * Constructor por defecto
