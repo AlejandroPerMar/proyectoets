@@ -5,6 +5,8 @@
  */
 package es.iespuertodelacruz.gppuerto.model;
 
+import java.util.HashMap;
+
 /**
  *
  * @author Alejandro Pérez Martín y Samuel Gonzalez Machado
@@ -16,7 +18,7 @@ public class Piloto {
     private String apellido;
     private Integer edad;
     private String paisOrigen;
-    private Temporada temporadasRealizadas;
+    private HashMap<Integer, Temporada> temporadasRealizadas;
 
     /**
      * Constructor por defecto.
@@ -37,7 +39,7 @@ public class Piloto {
         this.apellido = apellido;
         this.edad = edad;
         this.paisOrigen = paisOrigen;
-        this.temporadasRealizadas = temporadasRealizadas;
+        this.temporadasRealizadas = new HashMap<>();
     }
     
     
@@ -75,11 +77,11 @@ public class Piloto {
         this.paisOrigen = paisOrigen;
     }
 
-    public Temporada getTemporadasrealizadas() {
+    public HashMap<Integer, Temporada> getTemporadasrealizadas() {
         return temporadasRealizadas;
     }
 
-    public void setTemporadasrealizadas(Temporada temporadasRealizadas) {
+    public void setTemporadasrealizadas(HashMap<Integer, Temporada> temporadasRealizadas) {
         this.temporadasRealizadas = temporadasRealizadas;
     }
 }

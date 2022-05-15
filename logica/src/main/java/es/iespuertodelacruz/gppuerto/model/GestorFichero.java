@@ -6,13 +6,22 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
+
+import javax.print.DocFlavor.URL;
 
 public class GestorFichero {
 
     File fichero;
     
-    public GestorFichero(String ruta) {
-        fichero = new File(ruta);
+    public GestorFichero(String ruta) throws URISyntaxException {
+        java.net.URL resource = GestorFichero.class.getResource(ruta);
+        fichero =Paths.get(resource.toURI()).toFile();
+    }
+
+    public GestorFichero() {
+
     }
 
     /**
@@ -32,6 +41,7 @@ public class GestorFichero {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(contenidoFich);
         return contenidoFich;
     }
     

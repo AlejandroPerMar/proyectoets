@@ -1,5 +1,6 @@
 package es.iespuertodelacruz.gppuerto.model;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class Buscador {
@@ -29,8 +30,8 @@ public class Buscador {
      * @param nombreUsuario El nombre del usuario
      * @param contrasena La contrasena del usuario
      */
-    public boolean iniciarSesion(String nombreUsuario, String contrasena) {
-        String[] usuarios = accederUsuarios();
+    public boolean iniciarSesion(String nombreUsuario, String contrasena, String rutaFichero) {
+        String[] usuarios = accederUsuarios(rutaFichero);
         for (String strUsuario : usuarios) {
             String[] datosUsuario = strUsuario.split(";");
             if(datosUsuario[0].equals(nombreUsuario) && datosUsuario[1].equals(contrasena)) {
@@ -44,8 +45,8 @@ public class Buscador {
     /**
      * Metodo para registrar un usuario en caso de que no exista
      */
-    public boolean registrarse(String nombreUsuario, String contrasena) {
-        String[] usuarios = accederUsuarios();
+    public boolean registrarse(String nombreUsuario, String contrasena, String rutaFichero) {
+        String[] usuarios = accederUsuarios(rutaFichero);
         for (String strUsuario : usuarios) {
             String[] datosUsuario = strUsuario.split(";");
             if(datosUsuario[0].equals(nombreUsuario)) {
@@ -57,7 +58,7 @@ public class Buscador {
             ficheroUsuarios += strUsuarios + "\n";
         }
         ficheroUsuarios += nombreUsuario + ";" + contrasena;
-        escribirUsuarios(ficheroUsuarios);
+        escribirUsuarios(ficheroUsuarios, rutaFichero);
         return true;
     }
 
@@ -65,8 +66,13 @@ public class Buscador {
      * Metodo para devolver los usuarios en diferentes Strings
      * @return Array de Strings con los usuarios
      */
-    public String[] accederUsuarios() {
-        GestorFichero gf = new GestorFichero("/tmp/usuarios.csv");
+    public String[] accederUsuarios(String rutaFichero) {
+        GestorFichero gf;
+        try {
+            gf = new GestorFichero(rutaFichero);
+        } catch (URISyntaxException e) {
+            return null;
+        }
         String strUsuarios = gf.leerFichero();
         String[] splUsuarios = strUsuarios.split("\n");
         return splUsuarios;
@@ -77,9 +83,9 @@ public class Buscador {
      * @param contenidoUsuarios
      * @return
      */
-    public boolean escribirUsuarios(String contenidoUsuarios) {
+    public boolean escribirUsuarios(String contenidoUsuarios, String rutaFichero) {
         try {
-            GestorFichero gf = new GestorFichero("/tmp/usuarios.csv");
+            GestorFichero gf = new GestorFichero(rutaFichero);
             gf.escribirFichero(contenidoUsuarios);
         }catch(Exception ex) {
             return false;
@@ -120,7 +126,7 @@ public class Buscador {
         nombre = nombre.toLowerCase();
         ArrayList<Equipo> posiblesResultados = new ArrayList<>();
         for (Equipo equipo : equipos) {
-            if(equipo.nombre.contains(nombre)) {
+            if(equipo.nombre.toLowerCase().contains(nombre)) {
                 posiblesResultados.add(equipo);
             }
         }
@@ -163,7 +169,7 @@ public class Buscador {
         nombre = nombre.toLowerCase();
         ArrayList<Circuito> posiblesResultados = new ArrayList<>();
         for (Circuito circuito : circuitos) {
-            if(circuito.getNombre().contains(nombre)) {
+            if(circuito.getNombre().toLowerCase().contains(nombre)) {
                 posiblesResultados.add(circuito);
             }
         }
@@ -185,7 +191,7 @@ public class Buscador {
         nombre = nombre.toLowerCase();
         ArrayList<Vehiculo> posiblesResultados = new ArrayList<>();
         for (Vehiculo vehiculo : vehiculos) {
-            if(vehiculo.getNombre().contains(nombre)) {
+            if(vehiculo.getNombre().toLowerCase().contains(nombre)) {
                 posiblesResultados.add(vehiculo);
             }
         }
